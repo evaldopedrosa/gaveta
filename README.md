@@ -35,7 +35,7 @@ Com Node.js instalado, execute `node tests/background.cjs` para testar a lógica
 
 A extensão não tem servidor próprio, conta ou análise de uso. Ela salva somente os vídeos adicionados pelo usuário no `chrome.storage.local`. Ao abrir a gaveta, títulos e links são exibidos na página do YouTube e as miniaturas são carregadas de `i.ytimg.com`. O link do rodapé abre `evakdo.com` somente quando clicado. Leia a [política de privacidade](PRIVACIDADE.md).
 
-## Antes de uma publicação pública
+## Antes de publicar na Chrome Web Store
 
 - Concluir a revisão de privacidade da interface exibida no YouTube.
 - Criar a importação da lista para migrar dados de instalações locais.
