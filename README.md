@@ -1,45 +1,46 @@
 # Gaveta
 
-![Conceito de marca da Gaveta](assets/logo-concept.svg)
+<img src="assets/logo-concept.svg" alt="Ícone da Gaveta" width="72">
 
-[English](README.en.md) · **Português**
+**Guarde vídeos para depois. Feche as abas.**
 
-Uma fila leve para guardar vídeos do YouTube™ sem abrir dezenas de abas. Projeto independente feito por [Evakdo](https://evakdo.com/).
+Uma fila dentro do YouTube para quem abria vídeos em novas abas só para lembrar de assistir mais tarde. Grátis, local e feita por [Evakdo](https://evakdo.com/).
 
-**Estado:** versão beta 0.5.0. A extensão ainda não está publicada na Chrome Web Store.
+**Português** · [English](README.en.md) · [Ver demo ilustrada (15 s)](assets/gaveta-demo.mp4)
 
-O ícone acima é um conceito inicial de marca.
+![Prévia da Gaveta em modo claro, com três vídeos de exemplo](assets/preview-light.png)
 
-## O que faz
+*Prévia da interface em uma página de teste, com vídeos fictícios. [Ver modo escuro](assets/preview-dark.png) · [Ver gaveta vazia e atalho](assets/preview-empty.png).*
 
-- Guarda um vídeo pelo botão **+** na miniatura ou com **Option/Alt + clique** no link.
-- Mostra a fila em uma gaveta recolhível na página do YouTube.
-- Permite arrastar para ordenar e remover com o ícone de lixeira.
-- Baixa a lista em CSV com títulos, links e datas.
-- Mantém até 300 vídeos no armazenamento local deste perfil do Chrome.
+## Como funciona
 
-## Instalação local
+1. Na home ou nas buscas do YouTube, passe o mouse sobre uma miniatura e clique em **+**. Também dá para usar **Option + clique** no Mac ou **Alt + clique** em outros sistemas.
+2. Clique em **Gaveta** no topo do YouTube para abrir a fila. Arraste pela alça para ordenar, baixe a lista em CSV ou remova um item com a lixeira.
+3. Clique em um vídeo da fila para assisti-lo. Ele sai da gaveta quando você o abre, inclusive com **Command/Ctrl + clique** ou clique do meio.
 
-1. Baixe o código como ZIP e descompacte, ou clone este repositório.
-2. Abra `chrome://extensions` no Chrome e ative **Modo do desenvolvedor**.
-3. Clique em **Carregar sem compactação** e escolha esta pasta, que contém `manifest.json`.
-4. Recarregue as páginas do YouTube que já estavam abertas.
+Na página de um vídeo, a gaveta mostra **“Já está na Gaveta”** se o link foi salvo antes. Quando a lista está vazia, ela mostra o atalho. O tema claro ou escuro acompanha a preferência do sistema automaticamente.
 
-Veja [LEIA-ME.md](LEIA-ME.md) para os controles e limites.
+## Instalar no Chrome
 
-## Verificação do código
+A Gaveta está em **beta (v0.6.0)** e ainda não está na Chrome Web Store:
 
-Com Node.js instalado, execute `node tests/background.cjs` para testar a lógica da fila. A extensão em si não precisa de Node.js para funcionar.
+1. [Baixe o repositório como ZIP](https://github.com/evaldopedrosa/gaveta/archive/refs/heads/main.zip) e descompacte, ou clone o repositório.
+2. Abra `chrome://extensions` e ative **Modo do desenvolvedor**.
+3. Clique em **Carregar sem compactação** e selecione a pasta descompactada que contém `manifest.json`.
+4. Recarregue as abas do YouTube que já estavam abertas.
 
-## Privacidade
+Ao atualizar os arquivos, clique em **Recarregar** no cartão da extensão em `chrome://extensions` e recarregue as abas do YouTube. Seus links salvos permanecem no armazenamento local do mesmo perfil do Chrome.
 
-A extensão não tem servidor próprio, conta ou análise de uso. Ela salva somente os vídeos adicionados pelo usuário no `chrome.storage.local`. Ao abrir a gaveta, títulos e links são exibidos na página do YouTube e as miniaturas são carregadas de `i.ytimg.com`. O link do rodapé abre `evakdo.com` somente quando clicado. Leia a [política de privacidade](PRIVACIDADE.md).
+## Dados e privacidade
 
-## Antes de publicar na Chrome Web Store
+A Gaveta salva **links, títulos e datas**, não baixa os vídeos. A lista fica em `chrome.storage.local` neste perfil do Chrome, sem conta, servidor próprio ou análise de uso. As miniaturas da fila são carregadas do YouTube quando a gaveta está aberta. O limite é de 300 vídeos.
 
-- Concluir a revisão de privacidade da interface exibida no YouTube.
-- Criar a importação da lista para migrar dados de instalações locais.
-- Aprovar o ícone e preparar imagens e textos da Chrome Web Store.
-- Testar em diferentes layouts do YouTube e traduzir a interface para inglês. A interface atual está em português.
+Use **Baixar lista** para guardar uma cópia em CSV. A lista é removida se você desinstalar a extensão; o CSV pode ser guardado separadamente. Veja a [política de privacidade](PRIVACIDADE.md).
 
-Este projeto não é afiliado ao YouTube ou ao Google. YouTube é uma marca do Google LLC.
+## Código e limitações
+
+O código da extensão está nesta pasta: `content.js` desenha a interface e `background.js` administra a fila. Com Node.js instalado, `node tests/background.cjs` verifica a lógica de armazenamento; Node.js não é necessário para usar a extensão.
+
+A interface está em português. Mudanças no layout do YouTube podem exigir ajustes no botão **+**. A demo acima é uma animação ilustrativa; as capturas mostram a interface real da extensão sobre uma página de teste.
+
+Gaveta é um projeto independente, sem afiliação ao YouTube ou ao Google. YouTube é marca do Google LLC.

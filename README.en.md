@@ -1,45 +1,46 @@
 # Gaveta
 
-![Gaveta brand concept](assets/logo-concept.svg)
+<img src="assets/logo-concept.svg" alt="Gaveta icon" width="72">
 
-**English** · [Português](README.md)
+**Save videos for later. Close the tabs.**
 
-A lightweight, local queue for saving YouTube™ videos without opening dozens of tabs. An independent project by [Evakdo](https://evakdo.com/).
+A queue inside YouTube for people who kept videos open in new tabs just to remember to watch them later. Free, local, and made by [Evakdo](https://evakdo.com/).
 
-**Status:** beta version 0.5.0. Gaveta is not yet available in the Chrome Web Store. The extension interface is currently in Portuguese; this guide explains the controls in English.
+[Português](README.md) · **English** · [Watch the illustrated 15-second demo](assets/gaveta-demo.mp4)
 
-The icon above is an early brand concept.
+![Gaveta in light mode with three sample videos](assets/preview-light.png)
 
-## Features
+*UI preview on a test page with fictional videos. [See dark mode](assets/preview-dark.png) · [See the empty queue and shortcut](assets/preview-empty.png).*
 
-- Save a video with the **+** button on its thumbnail, or **Option/Alt + click** a video link.
-- Open a collapsible queue inside YouTube.
-- Drag videos to reorder them, and remove them with the trash icon.
-- Download titles, links, and save dates as a CSV file.
-- Keep up to 300 videos in this Chrome profile's local storage.
+## How it works
 
-## Install from GitHub
+1. On the YouTube home page or in search results, hover over a thumbnail and click **+**. You can also **Option + click** on a Mac, or **Alt + click** elsewhere.
+2. Click **Gaveta** in the YouTube header to open the queue. Drag the handle to reorder, download your list as CSV, or remove an item with the trash icon.
+3. Click a queued video to watch it. It leaves the queue when opened, including with **Command/Ctrl + click** or a middle click.
 
-1. Download this repository as a ZIP and extract it, or clone it.
-2. Open `chrome://extensions` in Chrome and turn on **Developer mode**.
-3. Click **Load unpacked** and select this folder, the one containing `manifest.json`.
+On a video page, the drawer says **“Já está na Gaveta”** when that video is already saved. An empty drawer shows the shortcut. Light and dark modes follow your system preference automatically.
+
+## Install in Chrome
+
+Gaveta is in **beta (v0.6.0)** and is not yet in the Chrome Web Store:
+
+1. [Download the repository as a ZIP](https://github.com/evaldopedrosa/gaveta/archive/refs/heads/main.zip) and extract it, or clone the repository.
+2. Open `chrome://extensions` and enable **Developer mode**.
+3. Click **Load unpacked** and select the extracted folder containing `manifest.json`.
 4. Reload any YouTube tabs that were already open.
 
-The **Gaveta** button appears in the YouTube header. Click it to show or hide your queue. Opening a saved video uses the current tab; it stays in the queue until you remove it. **Command/Ctrl + click** still opens a new tab normally.
+After updating the files, click **Reload** on the extension card in `chrome://extensions`, then reload your YouTube tabs. Saved links remain in local storage in the same Chrome profile.
 
-## Code check
+## Data and privacy
 
-With Node.js installed, run `node tests/background.cjs` to test the queue logic. The extension itself does not need Node.js to run.
+Gaveta saves **links, titles, and dates**; it does not download videos. The list stays in `chrome.storage.local` in this Chrome profile, with no account, developer server, or analytics. Queue thumbnails load from YouTube when the drawer is open. The limit is 300 videos.
 
-## Privacy
+Use **Baixar lista** to export a CSV backup. Uninstalling the extension removes the queue; you can keep the CSV separately. Read the [privacy policy](PRIVACY.en.md).
 
-Gaveta has no developer server, account, or analytics. It saves only videos you explicitly add using `chrome.storage.local`. When you open the drawer, saved titles and links are rendered inside the YouTube page, and thumbnails are loaded from `i.ytimg.com`. The footer link opens `evakdo.com` only when clicked. Read the [privacy policy](PRIVACY.en.md).
+## Code and limitations
 
-## Before a Chrome Web Store release
+The extension code is in this folder: `content.js` renders the UI and `background.js` manages the queue. If you have Node.js, `node tests/background.cjs` checks the storage logic; Node.js is not needed to use Gaveta.
 
-- Complete the privacy review of the interface rendered on YouTube.
-- Add list import so people can move data from a local installation.
-- Finalize the icon, store images, and listing copy.
-- Test across YouTube layouts and translate the extension interface into English.
+The UI is currently in Portuguese. YouTube layout changes may require updates to the **+** button. The demo above is an illustrative animation; the screenshots show the actual extension UI on a test page.
 
-Gaveta is not affiliated with YouTube or Google. YouTube is a trademark of Google LLC.
+Gaveta is an independent project and is not affiliated with YouTube or Google. YouTube is a trademark of Google LLC.
