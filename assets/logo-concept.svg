@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Conceito de logo da Gaveta</title>
+  <desc id="desc">Um cartão coral entrando em uma gaveta clara sobre fundo escuro.</desc>
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="#17191d"/>
+  <rect x="42" y="25" width="44" height="46" rx="8" fill="#ec5967"/>
+  <rect x="52" y="39" width="24" height="4" rx="2" fill="#fff7f2"/>
+  <rect x="52" y="48" width="17" height="4" rx="2" fill="#fff7f2"/>
+  <rect x="25" y="56" width="78" height="53" rx="10" fill="#f5f3ef"/>
+  <path d="M25 67h78" stroke="#17191d" stroke-opacity=".18" stroke-width="3"/>
+  <rect x="50" y="81" width="28" height="6" rx="3" fill="#17191d"/>
+</svg>
