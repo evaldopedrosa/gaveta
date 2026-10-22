@@ -60,8 +60,8 @@
     .panel-head { display: flex; align-items: center; gap: 10px; padding: 16px;
       border-bottom: 1px solid var(--g-border); }
     .panel-icon { display: grid; place-items: center; width: 34px; height: 34px; flex: none;
-      color: var(--g-accent); background: var(--g-accent-soft); border-radius: 11px; }
-    .panel-icon svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 1.8; fill: none; }
+      background: transparent; border-radius: 9px; overflow: hidden; }
+    .panel-icon svg { display: block; width: 34px; height: 34px; }
     h2 { flex: 1; margin: 0; color: var(--g-text); font-size: 16px; font-weight: 700; line-height: 1.2; }
     .head-count { color: var(--g-muted); background: var(--g-soft); border-radius: 10px; padding: 3px 7px;
       font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; }
@@ -145,7 +145,7 @@
   launcher.className = "launcher";
   launcher.setAttribute("aria-label", "Abrir gaveta de vídeos");
   launcher.setAttribute("aria-expanded", "false");
-  launcher.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v4H4zM5 9v10h14V9M9 13h6"/></svg><span>Gaveta</span><span class="launcher-count">0</span>';
+  launcher.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="6" fill="#17191d"/><rect x="8" y="4" width="8" height="8" rx="2" fill="#ec5967"/><rect x="5" y="10" width="14" height="10" rx="2.5" fill="#f5f3ef"/><path d="M5 13h14" stroke="#17191d" stroke-width="1.2"/><rect x="9" y="15" width="6" height="1.5" rx=".75" fill="#17191d"/></svg><span>Gaveta</span><span class="launcher-count">0</span>';
 
   const floatSave = document.createElement("button");
   floatSave.type = "button";
@@ -160,7 +160,7 @@
   panel.setAttribute("aria-label", "Gaveta de vídeos do YouTube");
   panel.hidden = true;
   panel.innerHTML = `
-    <div class="panel-head"><span class="panel-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v4H4zM5 9v10h14V9M9 13h6"/></svg></span><h2>Gaveta</h2>
+    <div class="panel-head"><span class="panel-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="6" fill="#17191d"/><rect x="8" y="4" width="8" height="8" rx="2" fill="#ec5967"/><rect x="5" y="10" width="14" height="10" rx="2.5" fill="#f5f3ef"/><path d="M5 13h14" stroke="#17191d" stroke-width="1.2"/><rect x="9" y="15" width="6" height="1.5" rx=".75" fill="#17191d"/></svg></span><h2>Gaveta</h2>
       <span class="head-count" aria-label="0 vídeos">0</span><button class="close" type="button" aria-label="Recolher gaveta">×</button></div>
     <div class="panel-tools"><button class="save-current" type="button" hidden>Guardar este vídeo</button></div>
     <p class="hint">Option + clique em um vídeo para guardar sem abrir outra aba.</p>

@@ -1,8 +1,10 @@
 # Gaveta
 
+<img src="icons/icon48.png" alt="Gaveta logo" width="48">
+
 A Chrome extension that saves YouTube videos to a local queue, without opening a tab for each one. Free and made by [**Evakdo**](https://evakdo.com/).
 
-**Beta 0.6.0 ·** Not yet available on the Chrome Web Store.
+**Beta 0.6.1 ·** Not yet available on the Chrome Web Store.
 
 [Português](README.md) · **English**
 

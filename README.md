@@ -1,8 +1,10 @@
 # Gaveta
 
+<img src="icons/icon48.png" alt="Logo da Gaveta" width="48">
+
 Extensão para guardar vídeos do YouTube numa fila local, sem abrir uma aba para cada vídeo. Gratuita e feita por [**Evakdo**](https://evakdo.com/).
 
-**Beta 0.6.0 ·** Ainda não está na Chrome Web Store.
+**Beta 0.6.1 ·** Ainda não está na Chrome Web Store.
 
 **Português** · [English](README.en.md)
 
